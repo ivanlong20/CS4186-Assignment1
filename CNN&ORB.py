@@ -108,7 +108,6 @@ for i, gallery_img_no in tqdm(enumerate(gallery_imgs_no)):
 
             gallery_features[i].append(per_gallery_features)
             gallery_des[i].append(per_gallery_des)
-            # print(per_gallery_des.shape)
 
 query_features = []
 query_des = []
@@ -186,19 +185,19 @@ for i, query_img_no in tqdm(enumerate(query_imgs_no[0:20])):
     print(f'For query image No. {query_imgs_no[query_idx]}, the top 10 ranked similar image No. are {gallery_imgs_no_desc[0]} {gallery_imgs_no_desc[1]} {gallery_imgs_no_desc[2]} {gallery_imgs_no_desc[3]} {gallery_imgs_no_desc[4]} {gallery_imgs_no_desc[5]} {gallery_imgs_no_desc[6]} {gallery_imgs_no_desc[7]} {gallery_imgs_no_desc[8]} {gallery_imgs_no_desc[9] }')
     print(f'For query image No. {query_imgs_no[query_idx]}, the similarity scores are {score_record[descend_index[0]]} {score_record[descend_index[1]]} {score_record[descend_index[2]]} {score_record[descend_index[3]]} {score_record[descend_index[4]]} {score_record[descend_index[5]]} {score_record[descend_index[6]]} {score_record[descend_index[7]]} {score_record[descend_index[8]]} {score_record[descend_index[9]] }')
 
-    filename=path_query+'/'+str(query_imgs_no[query_idx])+'.jpg'
-    image = mpimg.imread(filename)
-    plt.imshow(image)
-    plt.show()
-    for x in range(10):
-        filename=path_gallery+'/'+str(gallery_imgs_no_desc[x])+'.jpg'
-        image = mpimg.imread(filename)
-        plt.imshow(image)
-        plt.show()
-    plt.close('all')
+    # filename=path_query+'/'+str(query_imgs_no[query_idx])+'.jpg'
+    # image = mpimg.imread(filename)
+    # plt.imshow(image)
+    # plt.show()
+    # for x in range(10):
+    #     filename=path_gallery+'/'+str(gallery_imgs_no_desc[x])+'.jpg'
+    #     image = mpimg.imread(filename)
+    #     plt.imshow(image)
+    #     plt.show()
+    # plt.close('all')
 
 # write the output file following the example
-f=open(r'./rank_list_CNN&SIFT.txt','w')
+f=open(r'./rank_list_CNN&ORB.txt','w')
 for i in range(num_query):
     f.write('Q'+str(i+1)+': ')
     for j in range(num_gallery):
